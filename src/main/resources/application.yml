@@ -33,7 +33,7 @@ app:
     accLocked: Account is Locked!!
     userRegSuccs: Please check your email for unlocking your account
     userRegFail: Failed to Register
-    unlockAccEmailSub: Registeration Success | Ashok IT
+    unlockAccEmailSub: Registeration Success 
     unlockAccEmailBodyFile: UNLOCK-ACC-EMAIL-BODY-TEMPLATE.txt
     recoverPwdEmailBodyFile: RECOVER-PASSWORD-EMAIL-BODY-TEMPLATE.txt
-    recoverPwdEmailSub: Forgot Password | Ashok IT
+    recoverPwdEmailSub: Forgot Password 
