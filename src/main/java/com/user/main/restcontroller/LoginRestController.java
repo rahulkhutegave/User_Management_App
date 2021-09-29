@@ -17,7 +17,6 @@ public class LoginRestController {
 
 	@PostMapping("/login")
 	public String login(@RequestBody LoginForm loginFrom) throws UserAppException {
-
 		return service.loginCheck(loginFrom);
 	}
 
