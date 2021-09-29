@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +60,7 @@ public class UserServiceImpl implements UserService {
 		Map<Integer, String> countries = new HashMap<Integer, String>();
 		List<CountryMasterEntity> allCountries = countryRepo.findAll();
 		allCountries.forEach(country -> countries.put(country.getCountryId(), country.getCountryName()));
+//		return allCountries.stream().collect(Collectors.toMap(CountryMasterEntity::getCountryId, CountryMasterEntity::getCountryName));
 		return countries;
 	}
 
@@ -67,6 +69,9 @@ public class UserServiceImpl implements UserService {
 		Map<Integer, String> statesMap = new HashMap<Integer, String>();
 		List<StateMasterEntity> states = stateRepo.findByCountryId(countryId);
 		states.forEach(state -> statesMap.put(state.getStateId(), state.getStateName()));
+		
+//		return states.stream().collect(Collectors.toMap(StateMasterEntity::getStateId, StateMasterEntity::getStateName));
+		
 		return statesMap;
 	}
 
@@ -75,6 +80,8 @@ public class UserServiceImpl implements UserService {
 		Map<Integer, String> citiesMap = new HashMap<Integer, String>();
 		List<CitiesMasterEntity> cities = cityRepo.findByStateId(stateId);
 		cities.forEach(city -> citiesMap.put(city.getCityid(), city.getCityName()));
+//		return cities.stream().collect(Collectors.toMap(CitiesMasterEntity::getCityid, CitiesMasterEntity::getCityName));
+		
 		return citiesMap;
 	}
 
